@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AsteroidSpawner : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class AsteroidSpawner : MonoBehaviour
     public bool canInstantiate;
     public GameObject spawnedObject;
     private int objectCount = 0;
+
     
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,18 @@ public class AsteroidSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //randomly flips spawn locations for objects to a positive or negative range
+        bool boolX = (UnityEngine.Random.value >= 0.5f);
+        bool boolZ = (UnityEngine.Random.value >= 0.5f);
+        if(boolX){
+            Min.x = Min.x * -1;
+            Max.x = Max.x * -1;
+        }
+        if(boolZ){
+            Min.z = Min.z * -1;
+            Max.x = Max.x * -1;
+        }
+        
         //picks random locations within range set by SetRanges, then applies them to randomPosition
         xAxis = UnityEngine.Random.Range(Min.x, Max.x);
         yAxis = UnityEngine.Random.Range(Min.y, Max.y);
@@ -38,8 +52,8 @@ public class AsteroidSpawner : MonoBehaviour
     }
     //function used to set the range of random spawning
     void SetRanges(){
-         Min = new Vector3(-20, 2, -20); 
-         Max = new Vector3(20, 20, 20);
+         Min = new Vector3(20, 2, 20); 
+         Max = new Vector3(30, 20, 30);
     }
     
     void InstantiateObjects(){
