@@ -13,24 +13,18 @@ public class AsteroidSpawner : MonoBehaviour
     private  float zAxis; 
     private Vector3 randomPosition ;
     public bool canInstantiate;
-    public GameObject spawnedObject;
+    public Asteroid asteroid;
     private int objectCount = 0;
 
     public float spawnTimer = 0f;
 
     private float spawnDelay = 1f;
 
-    Vector3 newPos;
-    public Camera player;
-    public int moveSpeed;
-    
-
     
     // Start is called before the first frame update
     void Start()
     {
         SetRanges();
-        player = FindObjectOfType<Camera>();
     }
 
     // Update is called once per frame
@@ -74,13 +68,7 @@ public class AsteroidSpawner : MonoBehaviour
     
     void InstantiateObjects(){
         if(canInstantiate == true){
-            Instantiate(spawnedObject, randomPosition, Quaternion.identity);
-            Rigidbody rb = spawnedObject.GetComponent<Rigidbody>();
-            newPos = (player.transform.position - spawnedObject.transform.position).normalized * moveSpeed;
-            Debug.Log(rb.velocity);
-            Debug.Log("-");
-            rb.AddForce(new Vector3(newPos.x, newPos.y, newPos.z));
-            Debug.Log(rb.velocity);
+            Instantiate(asteroid, randomPosition, Quaternion.identity);
         }
     }
 }
