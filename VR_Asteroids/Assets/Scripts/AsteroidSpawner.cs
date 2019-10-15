@@ -16,6 +16,10 @@ public class AsteroidSpawner : MonoBehaviour
     public GameObject spawnedObject;
     private int objectCount = 0;
 
+    public float spawnTimer = 0f;
+
+    private float spawnDelay = 3f;
+
     
     // Start is called before the first frame update
     void Start()
@@ -45,10 +49,16 @@ public class AsteroidSpawner : MonoBehaviour
         
         randomPosition = new Vector3(xAxis, yAxis, zAxis); 
 
-        if(objectCount < 51){
-            InstantiateObjects();
-            objectCount++;
+        spawnTimer += Time.deltaTime;
+        
+        if(spawnTimer > spawnDelay){
+            spawnTimer = 0f;
+            if(objectCount < 51){
+                InstantiateObjects();
+                objectCount++;
+            }
         }
+        
     }
     //function used to set the range of random spawning
     void SetRanges(){
