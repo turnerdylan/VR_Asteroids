@@ -59,6 +59,7 @@ public class AsteroidSpawner : MonoBehaviour
     void InstantiateObjects(){
         if(canInstantiate == true){
             Instantiate(spawnedObject, randomPosition, Quaternion.identity);
+            moveDir = (player.transform.position - transform.position).normalized * moveSpeed;
         }
     }
 }
