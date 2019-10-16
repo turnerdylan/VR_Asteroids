@@ -62,8 +62,8 @@ public class AsteroidSpawner : MonoBehaviour
     }
     //function used to set the range of random spawning
     void SetRanges(){
-         Min = new Vector3(20, 2, 20); 
-         Max = new Vector3(30, 20, 30);
+         Min = new Vector3(200, 2, 200); 
+         Max = new Vector3(300, 40, 300);
     }
     
     void InstantiateObjects(){

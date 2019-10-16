@@ -26,9 +26,9 @@ public class QTMObject : MonoBehaviour
             if (!float.IsNaN(trackedObj.Position.sqrMagnitude)) {
                 // Apply the position and rotation to the object
                 
-                transform.position = trackedObj.Position;
+                transform.position = trackedObj.Position * 20;
                 transform.rotation = trackedObj.Rotation;
-                Debug.Log(transform.position);
+                //Debug.Log(transform.position);
             }
         }
     }
