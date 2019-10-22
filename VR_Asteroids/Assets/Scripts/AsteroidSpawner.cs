@@ -14,7 +14,7 @@ public class AsteroidSpawner : MonoBehaviour
     private Vector3 randomPosition ;
     public bool canInstantiate;
     public Asteroid asteroid;
-    private int objectCount = 0;
+    public int objectCount = 0;
 
     public float spawnTimer = 0f;
 

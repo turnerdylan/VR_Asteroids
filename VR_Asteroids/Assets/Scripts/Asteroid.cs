@@ -12,6 +12,8 @@ public class Asteroid : MonoBehaviour
     public float moveSpeed = 10f;
     Vector3 scale;
     float scaleMod;
+
+    AsteroidSpawner AS;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,9 @@ public class Asteroid : MonoBehaviour
         Debug.Log("-");
         //rb.velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
         Debug.Log(moveDirection);
+        AS.objectCount--;
         Destroy(gameObject, 10);
+
     }
 
     void Update(){
