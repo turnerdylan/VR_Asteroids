@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Blade
   - Asteroid
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - Asteroids
   - Blade
-  - 
+  - Bullet
   - 
   - 
   - 

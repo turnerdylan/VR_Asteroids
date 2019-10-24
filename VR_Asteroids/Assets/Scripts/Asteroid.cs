@@ -17,6 +17,7 @@ public class Asteroid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AS = GameObject.FindObjectOfType<AsteroidSpawner>();
         scaleMod = Random.Range(200, 800);
         player = FindObjectOfType<Player>();
         if(GetComponent<Rigidbody>()){
