@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    LevelLoader ll;
+    ScreenShake ss;
+
     public TextMesh lives;
     public int numOfLives = 3;
 
@@ -13,6 +16,8 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ss = FindObjectOfType<ScreenShake>();
+        ll = FindObjectOfType<LevelLoader>();
         lives.text = "Lives: " + numOfLives;
         timer.text = "Timer: " + currentTime;
     }
@@ -22,12 +27,28 @@ public class UIController : MonoBehaviour
     {
         currentTime += Time.deltaTime;
         int seconds = (int)(currentTime % 60);
-        timer.text = "Timer: " + currentTime;
+        timer.text = "Timer: " + seconds;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        numOfLives--;
-        lives.text = "Lives: " + numOfLives;
+        ss.TriggerShake();
+        if(numOfLives >= 1)
+        {
+            lives.text = "Lives: " + numOfLives;
+            numOfLives--;
+        }
+        else
+        {
+            lives.text = "Game over!";
+            lives.color = Color.red;
+            StartCoroutine(delay());
+        }
+    }
+
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(3);
+        ll.LoadYouLose();
     }
 }
