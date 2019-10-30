@@ -11,6 +11,7 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;
     private Vector3 spawnPoint;
     public GameObject shootPoint;
+    public int bulletSpeed = 10000;
     
     void Start()
     {
@@ -37,7 +38,7 @@ public class Gun : MonoBehaviour
         //spawnPoint = new Vector3(transform.position.x, transform.position.y, transform.position.z + 5);
         GameObject bullet = Instantiate(bulletPrefab);
         bullet.transform.position = shootPoint.transform.position;
-        bullet.GetComponent<Rigidbody>().AddForce(shootPoint.transform.forward * 5000);
+        bullet.GetComponent<Rigidbody>().AddForce(shootPoint.transform.forward * bulletSpeed);
     }
 
     private void OnTriggerEnter(Collider other)

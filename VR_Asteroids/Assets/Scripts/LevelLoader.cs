@@ -15,8 +15,9 @@ public class LevelLoader : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey("space")){
-            LoadNextScene();
+        if (Input.GetButtonDown("Fire1")){
+            if(currentSceneIndex == 0) LoadNextScene();
+            if (currentSceneIndex == 2) LoadMainMenu();
         }
     }
 

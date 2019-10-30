@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 80
+  spawn: {fileID: 8300000, guid: 5f45866e2e94dfa4b962faa772379c8e, type: 3}
 --- !u!54 &-8354966975353794229
 Rigidbody:
   m_ObjectHideFlags: 0

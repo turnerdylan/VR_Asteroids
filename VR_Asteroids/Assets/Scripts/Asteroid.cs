@@ -12,6 +12,7 @@ public class Asteroid : MonoBehaviour
     public float moveSpeed = 10f;
     Vector3 scale;
     float scaleMod;
+    public AudioClip spawn;
 
     AsteroidSpawner AS;
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class Asteroid : MonoBehaviour
             Debug.Log("true");
         }
 
+        AudioSource.PlayClipAtPoint(spawn, transform.position, 5f);
         scale = new Vector3(scaleMod, scaleMod, scaleMod);
         transform.localScale = scale;
         //rotation = new Vector3(Random.Range(0, 10),Random.Range(0, 10),Random.Range(0, 10));
