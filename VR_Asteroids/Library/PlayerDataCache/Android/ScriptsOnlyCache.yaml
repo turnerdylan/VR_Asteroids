@@ -3,7 +3,6 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Asteroid
     - AsteroidSpawner
-    - Blade
     - Bullet
     - CameraTransformCorrection
     - Gun
@@ -530,7 +529,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: b0f2352c172aad0944b768903b6ea820
+      Hash: 3b6e2cbf2642d66a6f7ea4ce54032613
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Gun
@@ -740,12 +739,6 @@ ScriptsOnlyBuild:
     className: CreateScrollList
   - hash:
       serializedVersion: 2
-      Hash: 4662de32b587ec6a7bfc25ec6bf21e05
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Blade
-  - hash:
-      serializedVersion: 2
       Hash: 1cbb684877139a8fcd5903f27462e898
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -788,7 +781,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: ea9eaf3da763f406f7984720a61c8826
+      Hash: 9a9c00b9758c1c55a1bc2f538399fac5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController
@@ -1052,7 +1045,7 @@ ScriptsOnlyBuild:
     className: GvrBetaControllerVisualMulti
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 7eed4a012010b2699db6079217a4eed8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bullet
@@ -1062,9 +1055,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: rotater
   platform: 13
   scenePathNames:
   - Assets/Scenes/Start Screen.unity
   - Assets/Scenes/Gameplay.unity
   - Assets/Scenes/Game Over.unity
-  playerPath: C:/Users/dturn/Documents/Repositories/Unity/VR/VR_Asteroids/VR_Asteroids/filetemp.apk
+  playerPath: D:/ClassWork/VR/Games/VR_Asteroids/VR_Asteroids/VR_Asteroids/builder.apk

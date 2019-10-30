@@ -32,15 +32,15 @@ public class AsteroidSpawner : MonoBehaviour
     {
         //randomly flips spawn locations for objects to a positive or negative range
         bool boolX = (UnityEngine.Random.value >= 0.5f);
-        bool boolZ = (UnityEngine.Random.value >= 0.5f);
+        //bool boolZ = (UnityEngine.Random.value >= 0.5f);
         if(boolX){
             Min.x = Min.x * -1;
             Max.x = Max.x * -1;
         }
-        if(boolZ){
-            Min.z = Min.z * -1;
-            Max.x = Max.x * -1;
-        }
+        // if(boolZ){
+        //     Min.z = Min.z * -1;
+        //     Max.x = Max.x * -1;
+        // }
         
         //picks random locations within range set by SetRanges, then applies them to randomPosition
         xAxis = UnityEngine.Random.Range(Min.x, Max.x);
@@ -62,8 +62,8 @@ public class AsteroidSpawner : MonoBehaviour
     }
     //function used to set the range of random spawning
     void SetRanges(){
-         Min = new Vector3(200, 2, 200); 
-         Max = new Vector3(300, 40, 300);
+         Min = new Vector3(0, 0, 400); 
+         Max = new Vector3(400, 60, 500);
     }
     
     void InstantiateObjects(){

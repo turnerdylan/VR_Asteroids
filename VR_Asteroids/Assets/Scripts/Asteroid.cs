@@ -10,6 +10,8 @@ public class Asteroid : MonoBehaviour
 
     Vector3 rotation;
     public float moveSpeed = 10f;
+    public float maxSpeed = 14f;
+    public float minSpeed = 6f;
     Vector3 scale;
     float scaleMod;
     public AudioClip spawn;
@@ -32,7 +34,7 @@ public class Asteroid : MonoBehaviour
         //rotation = new Vector3(Random.Range(0, 10),Random.Range(0, 10),Random.Range(0, 10));
 
 
-        moveDirection = (player.transform.position - transform.position).normalized * moveSpeed;
+        moveDirection = (player.transform.position - transform.position).normalized * Random.Range(minSpeed, maxSpeed);
         Debug.Log(moveDirection);
         Debug.Log("-");
         //rb.velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
